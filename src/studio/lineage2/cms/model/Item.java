@@ -1,5 +1,6 @@
 package studio.lineage2.cms.model;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
@@ -12,26 +13,20 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "items")
+@Data
 public class Item {
   @Id
   @GeneratedValue(generator = "increment")
   @GenericGenerator(name = "increment", strategy = "increment")
   @Column(name = "id")
-  private @Getter
-  @Setter
-  long id;
-  @Column(name = "m_account_id")
-  private @Getter
-  @Setter
-  long mAccountId;
+  private long id;
+  @Column(name = "owner_id")
+  private long mAccountId;
   @Column(name = "item_id")
-  private @Getter
-  @Setter
-  int itemId;
-  @Column(name = "item_count")
-  private @Getter
-  @Setter
-  long itemCount;
+  private int itemId;
+  //TODO: проверь это поле, скорее всего тут ошибка
+  @Column(name = "amount")
+  private Long itemCount;
 
   public void incCount(long count) {
     itemCount += count;
