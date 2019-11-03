@@ -3,10 +3,6 @@ package studio.lineage2.cms.model;
 import java.util.Map;
 import java.util.TreeMap;
 
-/**
- * Eanseen
- * 07.06.2016
- */
 public enum ServerType {
   LOGIN,
   GAME;

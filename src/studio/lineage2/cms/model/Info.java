@@ -1,46 +1,33 @@
 package studio.lineage2.cms.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.text.SimpleDateFormat;
 import java.util.TimeZone;
 
-/**
- * Eanseen
- * 27.05.2016
- */
+
 @Entity
 @Table(name = "info")
+@Data
 public class Info {
   @Id
   @GeneratedValue(generator = "increment")
   @GenericGenerator(name = "increment", strategy = "increment")
   @Column(name = "id")
-  private @Getter
-  long id;
+  private long id;
+
   @Column(name = "title")
-  private @Getter
-  @Setter
-  String title;
+  private String title;
   @Column(name = "content", length = 100000)
-  private @Getter
-  @Setter
-  String content;
+  private String content;
   @Column(name = "image", length = 100000)
-  private @Getter
-  @Setter
-  byte[] image;
+  private byte[] image;
   @Column(name = "link")
-  private @Getter
-  @Setter
-  String link;
+  private String link;
   @Column(name = "date")
-  private @Getter
-  @Setter
-  long date;
+  private long date;
 
   public String getDateS() {
     SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy HH:mm");

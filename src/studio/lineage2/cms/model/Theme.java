@@ -1,35 +1,21 @@
 package studio.lineage2.cms.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.TimeZone;
 
-/**
- * Eanseen
- * 29.10.2015
- */
+@Data
 public class Theme {
-  private @Getter
-  @Setter
-  int topicId;
-  private @Getter
-  @Setter
-  String titleFull;
-  private @Getter
-  @Setter
-  String title;
-  private @Getter
-  @Setter
-  String date;
-  private @Getter
-  @Setter
-  int userId;
-  private @Getter
-  @Setter
-  String name;
+
+
+  private int topicId;
+  private String titleFull;
+  private String title;
+  private String date;
+  private int userId;
+  private String name;
 
   public Theme(int topicId, String title, int date, int userId, String name) {
     SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy HH:mm");

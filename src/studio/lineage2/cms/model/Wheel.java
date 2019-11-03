@@ -1,42 +1,27 @@
 package studio.lineage2.cms.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 
-/**
- * Eanseen
- * 05.11.2015
- */
 @Entity
 @Table(name = "wheel")
+@Data
 public class Wheel {
   @Id
   @GeneratedValue(generator = "increment")
   @GenericGenerator(name = "increment", strategy = "increment")
   @Column(name = "id")
-  private @Getter
-  long id;
+  private long id;
   @Column(name = "item_id")
-  private @Getter
-  @Setter
-  int itemId;
+  private int itemId;
   @Column(name = "item_count")
-  private @Getter
-  @Setter
-  long itemCount;
+  private long itemCount;
   @Column(name = "chance")
-  private @Getter
-  @Setter
-  int chance;
+  private int chance;
   @Column(name = "image", length = 100000)
-  private @Getter
-  @Setter
-  byte[] image;
+  private byte[] image;
   @Transient
-  private @Getter
-  @Setter
-  String itemName;
+  private String itemName;
 }

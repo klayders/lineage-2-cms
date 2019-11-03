@@ -1,55 +1,42 @@
 package studio.lineage2.cms.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 
-/**
- * Eanseen
- * 07.06.2016
- */
+
 @Entity
 @Table(name = "server")
+@Data
 public class Server {
   @Id
   @GeneratedValue(generator = "increment")
   @GenericGenerator(name = "increment", strategy = "increment")
   @Column(name = "id")
-  private @Getter
-  @Setter
-  long id;
+  private long id;
+
   @Column(name = "type")
-  private @Getter
-  @Setter
-  ServerType type;
+  private ServerType type;
+
   @Column(name = "loginId")
-  private @Getter
-  @Setter
-  long loginId;
+  private long loginId;
+
   @Column(name = "name")
-  private @Getter
-  @Setter
-  String name;
+  private String name;
+
   @Column(name = "ip")
-  private @Getter
-  @Setter
-  String ip;
+  private String ip;
+
   @Column(name = "port")
-  private @Getter
-  @Setter
-  String port;
+  private String port;
+
   @Column(name = "login")
-  private @Getter
-  @Setter
-  String xmlRpcL;
+  private String xmlRpcL;
+
   @Column(name = "password")
-  private @Getter
-  @Setter
-  String xmlRpcP;
+  private String xmlRpcP;
+
   @Column(name = "enable")
-  private @Getter
-  @Setter
-  boolean enable;
+  private boolean enable;
 }

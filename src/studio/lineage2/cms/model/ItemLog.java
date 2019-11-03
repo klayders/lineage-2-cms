@@ -1,39 +1,25 @@
 package studio.lineage2.cms.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 
-/**
- * Eanseen
- * 04.11.2015
- */
 @Entity
 @Table(name = "items_log")
+@Data
 public class ItemLog {
   @Id
   @GeneratedValue(generator = "increment")
   @GenericGenerator(name = "increment", strategy = "increment")
   @Column(name = "id")
-  private @Getter
-  @Setter
-  long id;
+  private long id;
   @Column(name = "m_account_id")
-  private @Getter
-  @Setter
-  long mAccountId;
+  private long mAccountId;
   @Column(name = "item_id")
-  private @Getter
-  @Setter
-  int itemId;
+  private int itemId;
   @Column(name = "item_count")
-  private @Getter
-  @Setter
-  long itemCount;
+  private long itemCount;
   @Column(name = "text")
-  private @Getter
-  @Setter
-  String text;
+  private String text;
 }

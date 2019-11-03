@@ -1,17 +1,12 @@
 package studio.lineage2.cms.model;
 
 import com.google.gson.Gson;
-import lombok.Getter;
+import lombok.Data;
 
-/**
- * Eanseen
- * 26.10.2015
- */
+@Data
 public class IMessage {
-  private @Getter
-  Type type;
-  private @Getter
-  String message;
+  private Type type;
+  private String message;
 
   public IMessage(Type type) {
     this.type = type;
