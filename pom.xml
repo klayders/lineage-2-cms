@@ -8,13 +8,12 @@
 	<version>0.0.2</version>
 	<packaging>jar</packaging>
 
-	<name>CMS</name>
-	<description></description>
+  <name>lineage-2-interlude</name>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.3.5.RELEASE</version>
+    <version>1.4.7.RELEASE</version>
 		<relativePath/>
 	</parent>
 
