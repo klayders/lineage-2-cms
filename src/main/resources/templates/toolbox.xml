@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<tools>
+  <toolbox scope="request" xhtml="true">
+    <tool key="Date" class="org.apache.velocity.tools.generic.DateTool"/>
+    <tool key="List" class="org.apache.velocity.tools.generic.ListTool"/>
+    <tool key="Number" class="org.apache.velocity.tools.generic.NumberTool"/>
+    <tool key="Math" class="org.apache.velocity.tools.generic.MathTool"/>
+    <tool key="Esc" class="org.apache.velocity.tools.generic.EscapeTool"/>
+    <tool key="Render" class="org.apache.velocity.tools.view.tools.ViewRenderTool"/>
+    <tool key="RenderCtx" class="org.apache.velocity.tools.generic.RenderTool"/>
+    <tool key="Object" class="studio.lineage2.cms.config.velocity.utils.ObjectTool"/>
+    <tool key="Array" class="studio.lineage2.cms.config.velocity.utils.ArrayTool"/>
+    <!--    <tool key="Role" class="pulseteam.portal.admin.form.AuthorityTool"/>-->
+    <!--    <tool key="Json" class="pulseteam.monolith.velocity.JsonVmTool"/>-->
+  </toolbox>
+</tools>
