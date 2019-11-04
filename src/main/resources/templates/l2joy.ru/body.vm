@@ -1,9 +1,9 @@
 <div id="general-wrapper">
-    <div id="bg1"></div>
-    <div id="bg2"></div>
-    <div id="bg3"></div>
-    <div id="bg4"></div>
-    <div id="bg5"></div>
+##    <div id="bg1"></div>
+##    <div id="bg2"></div>
+##    <div id="bg3"></div>
+##    <div id="bg4"></div>
+##    <div id="bg5"></div>
     <div class="inner-wrapper">
         <header id="header-wrapper">
             <ul class="nav">
