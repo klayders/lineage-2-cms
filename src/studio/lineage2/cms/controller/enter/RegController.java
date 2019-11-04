@@ -17,10 +17,7 @@ import studio.lineage2.cms.utils.MailUtil;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
-/**
- * Eanseen
- * 30.05.2016
- */
+
 @Controller
 @RequestMapping("/enter")
 public class RegController {

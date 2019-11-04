@@ -8,10 +8,7 @@ import org.springframework.stereotype.Component;
 import javax.mail.internet.MimeMessage;
 import java.util.Properties;
 
-/**
- * Eanseen
- * 24.11.2015
- */
+
 @Component
 public class MailUtil {
   @Value("${mail.enabled}")
