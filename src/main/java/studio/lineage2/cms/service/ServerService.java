@@ -16,22 +16,22 @@ public class ServerService {
 
   private final ServerRepository serverRepository;
 
-  @CacheEvict(value = SERVER_CACHE_NAME, cacheManager = "serverCacheManager", allEntries = true)
+  @CacheEvict(value = SERVER_CACHE_NAME, cacheManager = "cacheManager", allEntries = true)
   public void save(Server server) {
     serverRepository.save(server);
   }
 
-  @Cacheable(value = SERVER_CACHE_NAME, cacheManager = "serverCacheManager", key = "#id")
+  @Cacheable(value = SERVER_CACHE_NAME, cacheManager = "cacheManager", key = "#id")
   public Server findOne(long id) {
     return serverRepository.findOne(id);
   }
 
-  @Cacheable(value = SERVER_CACHE_NAME, cacheManager = "serverCacheManager", key = "'allServers'")
+  @Cacheable(value = SERVER_CACHE_NAME, cacheManager = "cacheManager", key = "'allServers'")
   public List<Server> findAll() {
     return serverRepository.findAll();
   }
 
-  @CacheEvict(value = SERVER_CACHE_NAME, cacheManager = "serverCacheManager", key = "#id")
+  @CacheEvict(value = SERVER_CACHE_NAME, cacheManager = "cacheManager", key = "#id")
   public void delete(long id) {
     serverRepository.delete(id);
   }

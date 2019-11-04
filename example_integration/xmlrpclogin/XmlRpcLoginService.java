@@ -4,10 +4,7 @@ import com.google.gson.Gson;
 import studio.lineage2.authserver.Config;
 import studio.lineage2.authserver.accounts.Account;
 
-/**
- Eanseen
- 12.06.2016
- */
+
 public class XmlRpcLoginService implements ILogin
 {
 	private Gson gson = new Gson();

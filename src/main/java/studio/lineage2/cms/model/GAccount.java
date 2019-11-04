@@ -17,14 +17,14 @@ public class GAccount {
   @Column(name = "id")
   private long id;
   @Column(name = "m_account_id")
-  private long mAccountId;
+  private long ownerId;
   @Column(name = "server_id")
   private long serverId;
   @Column(name = "name")
   private String name;
 
-  public GAccount(long mAccountId, long serverId, String name) {
-    this.mAccountId = mAccountId;
+  public GAccount(long ownerId, long serverId, String name) {
+    this.ownerId = ownerId;
     this.serverId = serverId;
     this.name = name;
   }

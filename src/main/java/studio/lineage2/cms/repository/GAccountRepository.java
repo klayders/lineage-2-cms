@@ -4,10 +4,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import studio.lineage2.cms.model.GAccount;
 
-/**
- * Eanseen
- * 07.06.2016
- */
+import java.util.List;
+
+
 @Repository
 public interface GAccountRepository extends JpaRepository<GAccount, Long> {
+  List<GAccount> findAllByOwnerIdAndServerId(long ownerId, long serverId);
 }

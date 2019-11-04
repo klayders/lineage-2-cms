@@ -19,7 +19,10 @@ public class GAccountService {
     gAccountRepository.save(user);
   }
 
-  public List<GAccount> findByMAccountIdAndServerId(long mAccoundId, long serverId) {
-    return gAccountRepository.findAll().stream().filter(gAccount -> gAccount.getMAccountId() == mAccoundId && gAccount.getServerId() == serverId).collect(Collectors.toList());
+  public List<GAccount> findByMAccountIdAndServerId(long ownerId, long serverId) {
+    gAccountRepository.findAll().stream()
+      .filter(gAccount -> gAccount.getOwnerId() == ownerId && gAccount.getServerId() == serverId)
+      .collect(Collectors.toList());
+    return gAccountRepository.findAllByOwnerIdAndServerId(ownerId, serverId);
   }
 }

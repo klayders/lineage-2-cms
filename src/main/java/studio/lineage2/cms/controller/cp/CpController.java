@@ -1,7 +1,7 @@
 package studio.lineage2.cms.controller.cp;
 
+import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -20,17 +20,13 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/cp")
+@RequiredArgsConstructor
 public class CpController {
-  @Autowired
-  private ServerService serverService;
-  @Autowired
-  private MAccountService mAccountService;
-  @Autowired
-  private GAccountService gAccountService;
-  @Autowired
-  private ForumService forumService;
-  @Autowired
-  private ItemService itemService;
+  private final ServerService serverService;
+  private final MAccountService mAccountService;
+  private final GAccountService gAccountService;
+  private final ForumService forumService;
+  private final ItemService itemService;
 
   @RequestMapping(value = "", method = {RequestMethod.GET})
   public String index(ModelMap model) {
@@ -108,8 +104,8 @@ public class CpController {
   }
 
   @RequestMapping(value = "/setVoteName", method = {RequestMethod.POST})
-  public
   @ResponseBody
+  public
   IMessage setVoteName(String voteName) {
     if (!voteName.matches("[A-Za-z0-9]{6,16}")) {
       return new IMessage(IMessage.Type.FAIL, "Идентификатор должен содержать 6-16 символов (A-Za-z0-9)");

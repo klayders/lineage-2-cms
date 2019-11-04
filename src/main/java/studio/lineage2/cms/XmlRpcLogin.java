@@ -75,8 +75,8 @@ public class XmlRpcLogin implements ILogin {
     IMessage message = XmlRpcUtil.getMessage(server, "XmlRpcLogin.reg", gl.toLowerCase(), gp);
 
     if (message.getType() == IMessage.Type.SUCCESS) {
-      MAccount mAccount = (MAccount) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-      gAccountService.save(new GAccount(mAccount.getId(), server.getId(), gl));
+      MAccount ownerId = (MAccount) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+      gAccountService.save(new GAccount(ownerId.getId(), server.getId(), gl));
     }
 
     return message;

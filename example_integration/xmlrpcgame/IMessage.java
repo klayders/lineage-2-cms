@@ -2,10 +2,7 @@ package studio.lineage2.gameserver.xmlrpcgame;
 
 import com.google.gson.Gson;
 
-/**
- Eanseen
- 26.10.2015
- */
+
 public class IMessage
 {
 	private static Gson gson = new Gson();

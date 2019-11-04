@@ -2,10 +2,7 @@ package studio.lineage2.authserver.xmlrpclogin;
 
 import com.google.gson.Gson;
 
-/**
- Eanseen
- 26.10.2015
- */
+
 public class IMessage
 {
 	private Type type;

@@ -33,12 +33,12 @@ public class ItemService {
   }
 
   public List<Item> findItemsByMAccountId(long mAccountId) {
-    return itemRepository.findAll().stream().filter(userItem -> userItem.getMAccountId() == mAccountId && userItem.getItemId() != 100000 && userItem.getItemId() != 100001 && userItem.getItemId() != 100002).collect(Collectors.toList());
+    return itemRepository.findAll().stream().filter(userItem -> userItem.getOwnerId() == mAccountId && userItem.getItemId() != 100000 && userItem.getItemId() != 100001 && userItem.getItemId() != 100002).collect(Collectors.toList());
   }
 
   public Item findOne(long mAccountId, int itemId) {
     for (Item item : itemRepository.findAll()) {
-      if (item.getMAccountId() == mAccountId && item.getItemId() == itemId) {
+      if (item.getOwnerId() == mAccountId && item.getItemId() == itemId) {
         return item;
       }
     }
@@ -65,14 +65,14 @@ public class ItemService {
     Item item = findOne(mAccountId, itemId);
     if (item == null) {
       item = new Item();
-      item.setMAccountId(mAccountId);
+      item.setOwnerId(mAccountId);
       item.setItemId(itemId);
     }
     item.incCount(itemCount);
     save(item);
 
     ItemLog itemLog = new ItemLog();
-    itemLog.setMAccountId(item.getMAccountId());
+    itemLog.setMAccountId(item.getOwnerId());
     itemLog.setItemId(item.getItemId());
     itemLog.setItemCount(itemCount);
     itemLog.setText(text);
@@ -106,7 +106,7 @@ public class ItemService {
     }
 
     ItemLog itemLog = new ItemLog();
-    itemLog.setMAccountId(item.getMAccountId());
+    itemLog.setMAccountId(item.getOwnerId());
     itemLog.setItemId(item.getItemId());
     itemLog.setItemCount(-itemCount);
     itemLog.setText(text);

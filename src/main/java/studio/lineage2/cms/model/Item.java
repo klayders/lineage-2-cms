@@ -1,30 +1,33 @@
 package studio.lineage2.cms.model;
 
 import lombok.Data;
-import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-/**
- * Eanseen
- * 04.11.2015
- */
+
 @Entity
 @Table(name = "items")
 @Data
 public class Item {
   @Id
-  @GeneratedValue(generator = "increment")
-  @GenericGenerator(name = "increment", strategy = "increment")
-  @Column(name = "id")
   private long id;
   @Column(name = "owner_id")
-  private long mAccountId;
+  private long ownerId;
   @Column(name = "item_id")
   private int itemId;
-  //TODO: проверь это поле, скорее всего тут ошибка
+  // количество одного предмета
   @Column(name = "amount")
-  private Long itemCount;
+  private long itemCount;
+
+
+  private ItemLocation itemLocation;
+  @Column(name = "item_type")
+  private long itemType;
+  private int slot;
+  private int enchant;
 
   public void incCount(long count) {
     itemCount += count;

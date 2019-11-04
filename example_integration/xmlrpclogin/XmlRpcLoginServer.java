@@ -9,10 +9,7 @@ import studio.lineage2.authserver.options.Options;
 
 import java.net.InetAddress;
 
-/**
- Eanseen
- 12.06.2016
- */
+
 public class XmlRpcLoginServer
 {
 	private static XmlRpcLoginServer ourInstance = new XmlRpcLoginServer();

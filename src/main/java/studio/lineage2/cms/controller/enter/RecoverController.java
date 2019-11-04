@@ -1,6 +1,6 @@
 package studio.lineage2.cms.controller.enter;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -18,21 +18,15 @@ import studio.lineage2.cms.utils.Rnd;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
-/**
- * Eanseen
- * 30.05.2016
- */
 @Controller
 @RequestMapping("/enter/recover")
+@RequiredArgsConstructor
 public class RecoverController {
-  @Autowired
   private MailUtil mailUtil;
-  @Autowired
   private MAccountService mAccountService;
-  @Autowired
   private ReCaptchaService reCaptchaService;
-  @Autowired
   private HttpServletRequest request;
+
 
   @RequestMapping(method = {RequestMethod.GET})
   public String index(ModelMap model) {
@@ -69,11 +63,10 @@ public class RecoverController {
       temp.setPassword(new BCryptPasswordEncoder().encode(password));
       mAccountService.save(temp);
 
-      StringBuilder sb = new StringBuilder();
-      sb.append("Вы восстановили пароль на проекте").append(" ").append(mailUtil.getTitle()).append("<br><br>");
-      sb.append("<b>").append("Ваш Email").append(":</b> ").append(mAccount.getUsername()).append("<br>");
-      sb.append("<b>").append("Ваш Пароль").append(":</b> ").append(password).append("<br>");
-      mailUtil.send(temp.getUsername(), mailUtil.getTitle() + " - Восстановление пароля", sb.toString());
+      String sb = "Вы восстановили пароль на проекте" + " " + mailUtil.getTitle() + "<br><br>" +
+        "<b>" + "Ваш Email" + ":</b> " + mAccount.getUsername() + "<br>" +
+        "<b>" + "Ваш Пароль" + ":</b> " + password + "<br>";
+      mailUtil.send(temp.getUsername(), mailUtil.getTitle() + " - Восстановление пароля", sb);
 
       model.addAttribute("message", "Восстановление пароля прошло успешно, информация отправлена на Email");
     } else {

@@ -30,10 +30,14 @@ public class PayController {
   @Value("${unitpayDesc}")
   private String unitpayDesc;
 
+  private final MAccountService mAccountService;
+  private final ItemService itemService;
+
   @Autowired
-  private MAccountService mAccountService;
-  @Autowired
-  private ItemService itemService;
+  public PayController(MAccountService mAccountService, ItemService itemService) {
+    this.mAccountService = mAccountService;
+    this.itemService = itemService;
+  }
 
   public static <K extends Comparable<? super K>, V> Map<K, V> sortByKey(Map<K, V> map) {
     List<Map.Entry<K, V>> list = new LinkedList<>(map.entrySet());

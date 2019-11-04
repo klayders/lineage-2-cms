@@ -17,10 +17,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- Eanseen
- 12.06.2016
- */
+
 public class XmlRpcGameService implements IGame
 {
 	private Gson gson = new Gson();

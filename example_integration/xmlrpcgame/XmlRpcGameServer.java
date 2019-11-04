@@ -9,10 +9,7 @@ import studio.lineage2.gameserver.options.Options;
 
 import java.net.InetAddress;
 
-/**
- Eanseen
- 12.06.2016
- */
+
 public class XmlRpcGameServer
 {
 	private static XmlRpcGameServer ourInstance = new XmlRpcGameServer();

@@ -1,9 +1,6 @@
 package studio.lineage2.gameserver.xmlrpcgame;
 
-/**
- Eanseen
- 12.06.2016
- */
+
 public interface IGame
 {
 	String getPlayersNameByAccount(String account);
