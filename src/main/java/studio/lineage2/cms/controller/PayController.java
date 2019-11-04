@@ -17,10 +17,7 @@ import studio.lineage2.cms.service.MAccountService;
 import javax.servlet.http.HttpServletRequest;
 import java.util.*;
 
-/**
- * Eanseen
- * 16.06.2016
- */
+
 @Controller
 @RequestMapping("/pay")
 public class PayController {

@@ -1,20 +1,16 @@
 package studio.lineage2.cms.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import studio.lineage2.cms.model.Server;
 import studio.lineage2.cms.repository.ServerRepository;
 
 import java.util.List;
 
-/**
- * Eanseen
- * 07.06.2016
- */
 @Service
+@RequiredArgsConstructor
 public class ServerService {
-  @Autowired
-  private ServerRepository serverRepository;
+  private final ServerRepository serverRepository;
 
   public void save(Server server) {
     serverRepository.save(server);

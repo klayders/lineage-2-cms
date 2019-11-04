@@ -17,10 +17,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Eanseen
- * 23.10.2015
- */
+
 @Controller
 @RequestMapping("/cp")
 public class CpController {

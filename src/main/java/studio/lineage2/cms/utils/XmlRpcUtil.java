@@ -8,10 +8,6 @@ import studio.lineage2.cms.model.Server;
 
 import java.net.URL;
 
-/**
- * Eanseen
- * 07.06.2016
- */
 public class XmlRpcUtil {
   public static IMessage getMessage(Server server, String method, Object... objects) {
     try {

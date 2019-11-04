@@ -16,10 +16,7 @@ import studio.lineage2.cms.utils.XmlRpcUtil;
 import java.util.Collections;
 import java.util.List;
 
-/**
- * Eanseen
- * 12.06.2016
- */
+
 @Controller
 @RequestMapping("/XmlRpcGame")
 public class XmlRpcGame implements IGame {
@@ -34,9 +31,8 @@ public class XmlRpcGame implements IGame {
 
   @Override
   @RequestMapping(value = "/getPlayersNameByAccount", method = {RequestMethod.GET}, produces = {"application/plane; charset=UTF-8"})
-  public
   @ResponseBody
-  String getPlayersNameByAccount(long loginServerId, long gameServerId, String account) {
+  public String getPlayersNameByAccount(long loginServerId, long gameServerId, String account) {
     Server loginServer = serverService.findOne(loginServerId);
     Server gameServer = serverService.findOne(gameServerId);
 
@@ -60,9 +56,8 @@ public class XmlRpcGame implements IGame {
 
   @Override
   @RequestMapping(value = "/addItemByPlayerName", method = {RequestMethod.POST})
-  public
   @ResponseBody
-  IMessage addItemByPlayerName(long loginServerId, long gameServerId, String account, String playerName, int itemId, long itemCount) {
+  public IMessage addItemByPlayerName(long loginServerId, long gameServerId, String account, String playerName, int itemId, long itemCount) {
     Server loginServer = serverService.findOne(loginServerId);
     Server gameServer = serverService.findOne(gameServerId);
 
@@ -101,9 +96,8 @@ public class XmlRpcGame implements IGame {
 
   @Override
   @RequestMapping(value = "/getTopPvP", method = {RequestMethod.GET}, produces = {"application/plane; charset=UTF-8"})
-  public
   @ResponseBody
-  String getTopPvP(long loginServerId, long gameServerId, int count) {
+  public String getTopPvP(long loginServerId, long gameServerId, int count) {
     Server loginServer = serverService.findOne(loginServerId);
     Server gameServer = serverService.findOne(gameServerId);
 
@@ -120,9 +114,8 @@ public class XmlRpcGame implements IGame {
 
   @Override
   @RequestMapping(value = "/getTopPK", method = {RequestMethod.GET}, produces = {"application/plane; charset=UTF-8"})
-  public
   @ResponseBody
-  String getTopPK(long loginServerId, long gameServerId, int count) {
+  public String getTopPK(long loginServerId, long gameServerId, int count) {
     Server loginServer = serverService.findOne(loginServerId);
     Server gameServer = serverService.findOne(gameServerId);
 

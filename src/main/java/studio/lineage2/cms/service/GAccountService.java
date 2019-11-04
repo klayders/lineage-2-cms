@@ -1,6 +1,6 @@
 package studio.lineage2.cms.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import studio.lineage2.cms.model.GAccount;
 import studio.lineage2.cms.repository.GAccountRepository;
@@ -8,14 +8,12 @@ import studio.lineage2.cms.repository.GAccountRepository;
 import java.util.List;
 import java.util.stream.Collectors;
 
-/**
- * Eanseen
- * 07.06.2016
- */
 @Service
+@RequiredArgsConstructor
 public class GAccountService {
-  @Autowired
-  private GAccountRepository gAccountRepository;
+
+  private final GAccountRepository gAccountRepository;
+
 
   public void save(GAccount user) {
     gAccountRepository.save(user);

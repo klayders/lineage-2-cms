@@ -1,7 +1,7 @@
 package studio.lineage2.cms.controller.cp;
 
 import com.google.gson.Gson;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -23,24 +23,17 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
-/**
- * Eanseen
- * 08.06.2016
- */
+
 @Controller
 @RequestMapping("/cp/item")
+@RequiredArgsConstructor
 public class CpItemController {
-  @Autowired
-  private ItemService itemService;
-  @Autowired
-  private ItemNameService itemNameService;
-  @Autowired
-  private ServerService serverService;
-  @Autowired
-  private GAccountService gAccountService;
+  private final ItemService itemService;
+  private final ItemNameService itemNameService;
+  private final ServerService serverService;
+  private final GAccountService gAccountService;
+  private final Gson gson;
 
-  @Autowired
-  private Gson gson;
 
   @RequestMapping(value = "", method = {RequestMethod.GET})
   public String index(ModelMap model) {
@@ -58,9 +51,8 @@ public class CpItemController {
   }
 
   @RequestMapping(value = "/getGameServersByLoginServerId/{serverId}", method = {RequestMethod.GET})
-  public
   @ResponseBody
-  String getGameServersByLoginServerId(@PathVariable long serverId) {
+  public String getGameServersByLoginServerId(@PathVariable long serverId) {
     Map<Long, String> gameServers = new TreeMap<>();
     for (Server server : serverService.findAll()) {
       if (server.getType() == ServerType.GAME && server.isEnable() && server.getLoginId() == serverId) {
@@ -71,9 +63,8 @@ public class CpItemController {
   }
 
   @RequestMapping(value = "/getAccountsByLoginServerId/{serverId}", method = {RequestMethod.GET})
-  public
   @ResponseBody
-  String getAccountsByServerId(@PathVariable long serverId) {
+  public String getAccountsByServerId(@PathVariable long serverId) {
     MAccount mAccount = (MAccount) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
     List<String> accounts = new ArrayList<>();

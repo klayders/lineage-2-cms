@@ -7,7 +7,7 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "game_account")
+@Table(name = "accounts")
 @Data
 @NoArgsConstructor
 public class GAccount {
